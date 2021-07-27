@@ -12,13 +12,13 @@ const FlexContainerColumn = styled.div`
     flex-flow: column nowrap;
 `
 
-function BinaryQuestionAnswer({number, question, onYes, onNo}) {
+function BinaryQuestionAnswer({number, question, answername1, answername2, answervalue1, answervalue2}) {
   return (
     <GridContainer> 
         {number}. {question} 
     <FlexContainerColumn>
-        <PrimaryButton onClick={onYes}>네</PrimaryButton>
-        <PrimaryButton onClick={onNo}>아니요</PrimaryButton>
+    <PrimaryButton onClick ={answervalue1}>  {answername1}</PrimaryButton>
+    <PrimaryButton onClick ={answervalue2}>  {answername2}</PrimaryButton>
     </FlexContainerColumn>
     </GridContainer>
   );
