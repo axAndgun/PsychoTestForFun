@@ -7,8 +7,7 @@ function TestQuestion(req,res) {
     if(!vtest){
       res.stauts(400).send(null)
     }else{
-     // res.status(200).json({id: test.id, questions: test.questions})
-      res.status(200).json({id: vtest.id, name: vtest.name})
+      res.status(200).json({questions : vtest.questions, results: vtest.results})
     }
   }
   

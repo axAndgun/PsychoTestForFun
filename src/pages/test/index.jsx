@@ -1,42 +1,28 @@
 import { useRouter } from 'next/router'
 import { useContext, useEffect, useState } from 'react'
-import { PrimaryButton } from '../../components/atoms/Button'
-import ClientSideLink from '../../components/atoms/ClientSideLink'
-import { Padding } from '../../components/atoms/Styles'
 import BinaryQuestionAnswer from '../../components/BinaryQuestionAnswer'
-import useGoToPage from '../../hooks/useGoToPage'
 import styled from 'styled-components'
-import { CenterPaddingH1, gradientBlueGreen } from './result'
 import { createContext } from "react";
 import useSwr from 'swr'
-import FlexLayoutColumn from "../../styles/FlexLayout"
 import {fetcher} from '../../utils/commons'
-
-export const GlobalContext = createContext({
-    answers: null,
-    setAnswers: () => null,
-})
+import { GlobalContext } from '../_app'
+import Image from 'next/image'
+import Timer from '../../components/Timer'
 
 
 function TestPage() {
 
-const { answers, setAnswers } = useContext(GlobalContext)
-//const goToHomePage = useGoToPage('/')
+const { values, setValues } = useContext(GlobalContext)
 const [questionNumber, setQuestionNumber] = useState(0)
 const router = useRouter()
-
 
 const { data: test, error } = useSwr(`/api/test/`, fetcher)
 const isTestLoading = !test && ! error 
 
-useEffect(() => {
-setAnswers(null)
-}, [setAnswers])
-
 if (isTestLoading){
     return (
         <>
-        Loading...
+        로딩중...
         </>
     )
 }
@@ -44,20 +30,49 @@ if (isTestLoading){
 if(!test){
     return(
         <>
-        test는 존재하지 않는다. 
+        test가 존재하지 않습니다. 
         </>
     )
 }
 
-const question = test.name
+const questions = test.questions
+const question = questions[questionNumber]
+
+if(!question){
+    router.push(`/test/result`)
+    return (
+        <>
+        결과 로딩중...
+        </>
+        )
+}
+
+const answers = question.answers
+const answer1 = answers[0]
+const answer2 = answers[1]
+const answername1 = answer1.name
+const answername2 = answer2.name
+const answervalue1 = answer1.value
+const answervalue2 = answer2.value
+//    console.log("+++++++++++++++++++++++++++++++++++++++++"+answername1)
+
+function updateResult(answerValues){
+    return () => {
+        if(questionNumber>=questions.length-1){
+            router.push(`/test/result`)
+        }else{         
+            setValues(values+answerValues)
+        }
+        setQuestionNumber((prev) => prev + 1)
+    }
+}
 
     return (
         <>
-        fad
-        {test.name}
-        {question}
+        <Image src="/dustbin.png" alt="main-image" width="120" height="30" objectFit="cover"/>
+        <BinaryQuestionAnswer number={question.id} question={question.name} answername1 ={answername1} answername2={answername2} answervalue1={updateResult(answervalue1)} answervalue2 ={updateResult(answervalue2)} />
+        <Timer onTimeout={()=>router.push(`/test/timeout`)} seconds = {30}/>
         </>
-
     )
 }
 

@@ -1,13 +1,22 @@
 import Link from 'next/link'
 import { CSSProperties, ReactNode } from 'react'
 import { stopPropagation } from '../../utils/commons'
+import styled from 'styled-components'
+import {fadeIn} from '../../styles/SpecialEffect'
 
-function ClientSideLink({ children, href, style }) {
+const RedLink = styled.a`
+  color: #8134af;
+  :hover{
+      color: #dd2a7b;
+  } 
+ 
+`
+function ClientSideLink({ children, href }) {
     return (
     <Link href={href}>
-        <a href={href} onClick={stopPropagation} style={style}>
+        <RedLink href={href} onClick={stopPropagation}> 
         {children}
-        </a>
+        </RedLink>
     </Link>
     )
 

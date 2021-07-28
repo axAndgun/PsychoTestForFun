@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components'
-import {PrimaryButton} from './atoms/Button'
+import {StyledButton} from './atoms/Button'
 
 const GridContainer = styled.div`
     display: grid;
@@ -12,13 +12,13 @@ const FlexContainerColumn = styled.div`
     flex-flow: column nowrap;
 `
 
-function BinaryQuestionAnswer({number, question, onYes, onNo}) {
+function BinaryQuestionAnswer({number, question, answername1, answername2, answervalue1, answervalue2}) {
   return (
     <GridContainer> 
         {number}. {question} 
     <FlexContainerColumn>
-        <PrimaryButton onClick={onYes}>네</PrimaryButton>
-        <PrimaryButton onClick={onNo}>아니요</PrimaryButton>
+    <StyledButton onClick ={answervalue1}>  {answername1}</StyledButton>
+    <StyledButton onClick ={answervalue2}>  {answername2}</StyledButton>
     </FlexContainerColumn>
     </GridContainer>
   );
