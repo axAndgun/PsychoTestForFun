@@ -4,22 +4,27 @@ export const test =[
       questions : [
         {
           id: '1',
+
           name: '일개미 영희는 퇴근하고 집에서 치킨을 시켰어요. 치킨이 남았네요?',
           answers : [
             {id: '1', name: '옆집 근육개미 철수를 집으로 부른다.', value: -10},
             {id: '2', name: '치킨뼈는 일반쓰레기에 버리고 고기는 먹어서 없앤다.', value: 10}
+
           ]
         },
         {
           id : '2',
+
           name: '오늘도 니코틴을 냠냠 먹은 영희. 영희의 담배 꽁초는 어디로 가야할까요?',
           answers : [
             {id: '1', name: '자연 속으로', value: -10},
             {id: '2', name: '잘생긴 수거함 오빠에게', value: 10}
+
           ]
         },
         {
           id : '3',
+
           name: '벌컥벌컥. 키햐아아. 영희가 보리 물(?)을 마셔요. 이 초록캔 어떡하지?',
           answers : [
             {id: '1', name: '잘생긴 수퍼빈 회수로봇에게', value: 10},
@@ -66,10 +71,12 @@ export const test =[
             {id: '2', name: '투명 생수병', value: 10}
           ]
         },
+
       ],
       results: [
         {
           id: '1',
+
           name: '인류의 미래는 당신 손에!!!',
           condition: (value) =>{
             return value>60
@@ -94,6 +101,7 @@ export const test =[
           },
           imageUrl: '/sad.jpg',
           contents: '세상을 바꾸기 전 주변 청소부터 좀 해야겠네요...'
+
         },
       ]
     }
