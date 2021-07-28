@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components'
-import {PrimaryButton} from './atoms/Button'
+import {StyledButton} from './atoms/Button'
 
 const GridContainer = styled.div`
     display: grid;
@@ -17,8 +17,10 @@ function BinaryQuestionAnswer({number, question, answername1, answername2, answe
     <GridContainer> 
         {number}. {question} 
     <FlexContainerColumn>
-    <PrimaryButton onClick ={answervalue1}>  {answername1}</PrimaryButton>
-    <PrimaryButton onClick ={answervalue2}>  {answername2}</PrimaryButton>
+
+    <StyledButton onClick ={answervalue1}>  {answername1}</StyledButton>
+    <StyledButton onClick ={answervalue2}>  {answername2}</StyledButton>
+
     </FlexContainerColumn>
     </GridContainer>
   );

@@ -7,6 +7,11 @@ import useSwr from 'swr'
 import {fetcher} from '../../utils/commons'
 import { GlobalContext } from '../_app'
 
+import Image from 'next/image'
+import Timer from '../../components/Timer'
+
+
+
 function TestPage() {
 
 const { values, setValues } = useContext(GlobalContext)
@@ -57,10 +62,10 @@ function updateResult(answerValues){
     return () => {
         if(questionNumber>=questions.length-1){
             router.push(`/test/result`)
-        }else{        
-            console.log(answerValues + "계산 전") 
+
+        }else{         
             setValues(values+answerValues)
-            console.log(answerValues + "계산 후") 
+
         }
         setQuestionNumber((prev) => prev + 1)
     }
@@ -68,7 +73,11 @@ function updateResult(answerValues){
 
     return (
         <>
+
+        <Image src="/dustbin.png" alt="main-image" width="120" height="30" objectFit="cover"/>
         <BinaryQuestionAnswer number={question.id} question={question.name} answername1 ={answername1} answername2={answername2} answervalue1={updateResult(answervalue1)} answervalue2 ={updateResult(answervalue2)} />
+        <Timer onTimeout={()=>router.push(`/test/timeout`)} seconds = {30}/>
+
         </>
     )
 }
