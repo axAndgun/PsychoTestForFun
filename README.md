@@ -1,4 +1,5 @@
 # 쓰레기 처리 능력 테스트 
+[클릭 하면 사이트로 이동합니다.] (https://trash-filter-test-5fmqbkkji-badhabits.vercel.app/)
 
 ## 실행 방법
 
