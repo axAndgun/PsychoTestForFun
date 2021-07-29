@@ -4,6 +4,10 @@ import ClientSideLink from 'components/atoms/ClientSideLink'
 import {FlexContainerAlignCenter} from '../styles/FlexContainer'
 import {focusInExpandFwd} from '../styles/SpecialEffect'
 import Image from 'next/image'
+import { useRouter } from 'next/router'
+import useGotoPage from '../hooks/useGotoPage'
+import {useState} from 'react'
+
 
 
 export const SquareFrame = styled.div`
@@ -39,16 +43,22 @@ const Padding = styled.div`
     padding: 2rem 0;
 `
 
+
+function GoToTest({children, onClick}){
+
+  return children
+}
+
 function Homepage() {
 
   return (
     <>
     <Padding>
     <FlexContainerColumnCenter>
-    <ClientSideLink href="/test"> 
+      <ClientSideLink href="/test">
       <Image src="/dustbin.png" alt="main-image" width="600" height="150" objectFit="cover"/>
-      <StartEffectTag>쓰레기 테스트 시작</StartEffectTag>
-    </ClientSideLink>
+      <StartEffectTag>쓰레기 처리 능력 테스트</StartEffectTag>
+      </ClientSideLink>
     </FlexContainerColumnCenter>
     </Padding>
     </>
