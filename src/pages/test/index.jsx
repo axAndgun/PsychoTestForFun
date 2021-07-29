@@ -15,6 +15,12 @@ export const LeftAnswers = styled.div`
     font-size: 20;
 `
 
+const FlexContainerColumnForImg = styled.div`
+
+    flex-flow: column nowrap;
+ 
+    
+`
 
 function TestPage() {
 
@@ -79,7 +85,9 @@ function updateResult(answerValues){
 
     return (
         <>
+        <FlexContainerColumnForImg>
         <Image src="/dustbin.png" alt="main-image" width="120" height="30" objectFit="cover"/>
+        </FlexContainerColumnForImg>
         <BinaryQuestionAnswer number={question.id} question={question.name} answername1 ={answername1} answername2={answername2} answervalue1={updateResult(answervalue1)} answervalue2 ={updateResult(answervalue2)} />
         <Timer onTimeout={()=>router.push(`/test/timeout`)} seconds = {60}/>
         <LeftAnswers>남은 문제: {questions.length - question.id}</LeftAnswers> 
@@ -89,5 +97,7 @@ function updateResult(answerValues){
 
 export default TestPage
 
-/*시간초과 되면 */ /*처음으로를 눌렀을 때 결과가 갱신되지 않음 */
-/*질문이 어려움 */
+/*시간초과 후 '처음으로' 를 눌렀을 때 결과가 리셋되지 않음 --> link 대신 a tag를 사용하여 해결*/
+
+
+// 버그 : 버튼 안에 글자가 세로로 출력됨. 
