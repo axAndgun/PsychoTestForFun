@@ -28,6 +28,7 @@ const LocationText = styled.h3`
 
 const FlexContainerColumnCenter = styled(FlexContainerAlignCenter)`
     flex-flow: column nowrap;
+    text-align: center;
     margin: 1rem 0;
 `
 
@@ -42,7 +43,13 @@ const StartEffectTag = styled(LocationText)`
 const Padding = styled.div`
     padding: 2rem 0;
 `
-
+const FlexContainerColumn = styled.div`
+    display: flex;
+    flex-flow: column nowrap;
+    //display: inline-block;
+   white-space : nowrap;
+    
+`
 
 function GoToTest({children, onClick}){
 
@@ -56,7 +63,9 @@ function Homepage() {
     <Padding>
     <FlexContainerColumnCenter>
       <ClientSideLink href="/test">
+        <FlexContainerColumn>
       <Image src="/dustbin.png" alt="main-image" width="600" height="150" objectFit="cover"/>
+      </FlexContainerColumn>
       <StartEffectTag>쓰레기 처리 능력 테스트</StartEffectTag>
       </ClientSideLink>
     </FlexContainerColumnCenter>
