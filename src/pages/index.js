@@ -47,7 +47,7 @@ const FlexContainerColumn = styled.div`
     display: flex;
     flex-flow: column nowrap;
     //display: inline-block;
-   white-space : nowrap;
+   white-space : nowrap; 
     
 `
 
@@ -68,6 +68,9 @@ function Homepage() {
       </FlexContainerColumn>
       <StartEffectTag>쓰레기 처리 능력 테스트</StartEffectTag>
       </ClientSideLink>
+      인생을 살다보면 수많은 쓰레기를 마주합니다. 
+      그때 우리는 분리수거를 하기도 하고 무단투기를 하기도 합니다.
+      이 테스트는 당신의 쓰레기 처리 능력을 테스트합니다.
     </FlexContainerColumnCenter>
     </Padding>
     </>

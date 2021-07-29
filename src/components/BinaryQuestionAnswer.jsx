@@ -26,7 +26,7 @@ const FlexContainer = styled.div`
     white-space : nowrap;
     
 `
-const FlexContainerColumn = styled.div`
+const FlexContainerColumn = styled.div` 
     display: flex;
     flex-flow: column nowrap;
     //display: inline-block;
