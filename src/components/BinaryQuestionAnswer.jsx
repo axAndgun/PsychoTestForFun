@@ -17,8 +17,10 @@ function BinaryQuestionAnswer({number, question, answername1, answername2, answe
     <FlexContainerColumn>
     <GridContainer> 
         {number}. {question} 
+
     <StyledButton onClick ={answervalue1}>  {answername1}</StyledButton>
     <StyledButton onClick ={answervalue2}>  {answername2}</StyledButton>
+
     </GridContainer>
     </FlexContainerColumn>
    
