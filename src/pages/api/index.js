@@ -5,70 +5,63 @@ export const test =[
         {
           id: '1',
 
-          name: '일개미 영희는 퇴근하고 집에서 치킨을 시켰어요. 치킨이 남았네요?',
+          name: '퇴근 후 홀로 치맥을 했다. 치킨이 남았다.',
           answers : [
-            {id: '1', name: '옆집 근육개미 철수를 집으로 부른다.', value: -10},
-            {id: '2', name: '치킨뼈는 일반쓰레기에 버리고 고기는 먹어서 없앤다.', value: 10}
+            {id: '1', name: '옆집에 사는 잘생긴 오빠를 부른다.', value: 10},
+            {id: '2', name: '치킨은 남지 않아요.', value: 5}
 
           ]
         },
         {
           id : '2',
 
-          name: '오늘도 니코틴을 냠냠 먹은 영희. 영희의 담배 꽁초는 어디로 가야할까요?',
+          name: ' 다음 중 분리수거 대상은?',
           answers : [
-            {id: '1', name: '자연 속으로', value: -10},
-            {id: '2', name: '잘생긴 수거함 오빠에게', value: 10}
+            {id: '1', name: '알코올 쓰레기 영희', value: 5},
+            {id: '2', name: '맥주 캔', value: 10}
 
           ]
         },
         {
           id : '3',
 
-          name: '벌컥벌컥. 키햐아아. 영희가 보리 물(?)을 마셔요. 이 초록캔 어떡하지?',
+          name: '다음 중 분리수거 대상이 아닌 것은?',
+
           answers : [
-            {id: '1', name: '잘생긴 수퍼빈 회수로봇에게', value: 10},
-            {id: '2', name: '발로 사뿐히 밟아주어요', value: -10}
+            {id: '1', name: '치킨뼈', value: 20},
+            {id: '2', name: '알코올 쓰레기 철수', value: 10}
           ]
         },
         {
           id : '4',
-          name: '영희는 오랜만에 모교를 찾아갔아요. 저 멀리 있는 하얗고 각진 건 뭐지?',
+          name: '다음 중 세계 환경의 날은?',
           answers : [
-            {id: '1', name: '담탱이', value: -10},
-            {id: '2', name: '수퍼루키', value: 10}
+            {id: '1', name: '6월 5일', value: 10},
+            {id: '2', name: '6월 25일', value: 0}
           ]
         },
         {
           id : '5',
-          name: '일개미 영희는 오늘도 치킨을 시켜먹었어요. 남은 치킨은?',
+          name: '길을 가다 바닥에 버려진 소주병이 보인다.',
           answers : [
-            {id: '1', name: '치킨은 남지 않아요.', value: 0},
-            {id: '2', name: '치킨은 남지 않아요.', value: 0}
+            {id: '1', name: '자주 가는 술집으로 간다.', value: 0},
+            {id: '2', name: '분리 수거를 한다.', value: 10}
           ]
         },
         {
           id : '6',
-          name: '영희의 룸메이트 지숙이 분리수거를 하고 있네요. 영희는',
+          name: '당신의 룸메이트는 분리수거를 하고 있다. 당신은',
           answers : [
-            {id: '1', name: '못 본척한다.', value: 10},
-            {id: '2', name: '도와준다.', value: -10}
+            {id: '1', name: '못 본척한다.', value: 0},
+            {id: '2', name: '도와준다.', value: 10}
           ]
         },
         {
           id : '7',
           name: '다음 중 쓰레기는 무엇일까요?',
           answers : [
-            {id: '1', name: '술에 떡이 된 영희', value: 10},
-            {id: '2', name: '치킨뼈', value: 10}
-          ]
-        },
-        {
-          id : '8',
-          name: '다음 중 분리수거 해야하는 것은 무엇일까요?',
-          answers : [
-            {id: '1', name: '라떼는 말이야...', value: 10},
-            {id: '2', name: '투명 생수병', value: 10}
+            {id: '1', name: '길에서 침 뱉는 사람', value: 10},
+            {id: '2', name: '길에 버려진 피자박스', value: 10}
           ]
         },
 
@@ -77,30 +70,32 @@ export const test =[
         {
           id: '1',
 
-          name: '인류의 미래는 당신 손에!!!',
+          name: '쓰레기 분별력이 매우 우수합니다.',
+
           condition: (value) =>{
             return value>60
           },
           imageUrl: '/happiest.jpg',
-          contents: '수퍼빈과 함께 깨끗한 미래를 만들어 갈 주인공은 바로 당신!'
+          contents: '언니, 오빠 최고!'
         },
         {
           id: '2',
-          name: '주인님이 최고에요.',
+          name: '쓰레기 구분 능력이 우수합니다.',
           condition: (value) =>{
             return 60>=value>=40
           },
           imageUrl: '/happy.jpg',
-          contents: '강아지도 웃는 세상을 만드는 당신! 훌륭하오!'
+          contents: '주인님 멋있어요!'
         },
         {
           id: '3',
-          name: '저런, 몽키 하우스에 오신 걸 환..영합니다...',
+          name: '쓰레기를 구분할 수 있는 안목을 기르세요.',
           condition: (value) =>{
             return 40>value>0
           },
           imageUrl: '/sad.jpg',
-          contents: '세상을 바꾸기 전 주변 청소부터 좀 해야겠네요...'
+
+          contents: '주변 청소부터 시작하면 도움이 될 겁니다.'
 
         },
       ]

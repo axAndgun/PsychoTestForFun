@@ -13,7 +13,7 @@ const LocationText = styled.h3`
     font-size: 20px;
 `
 
-const RsesultTag = styled(LocationText)`
+const ResultTag = styled(LocationText)`
     font-weight: bold;
     font-size: 40px;
 `
@@ -32,22 +32,20 @@ function TestResult() {
  let result =results[0]// let 재할당
 
  if(values>=60){
-   //setResult(results[0])
    result =results[0]
  }else if(values>=40&&values<60){
-   //setResult(results[1])
    result =results[1]
  }else{
-  // setResult(results[2]) 
   result =results[2]
 }
 
   return (
     <>
       <Image src ={result.imageUrl} height ="200" width="200" alt="result-image" objectFit="cover"/> 
-      <RsesultTag>{result.name}</RsesultTag>
+      <ResultTag> 점수: {values} </ResultTag>
+      <ResultTag>{result.name}</ResultTag>
       <LocationText>{result.contents}</LocationText>
-      <ClientSideLink href="/"> 처음으로 </ClientSideLink>
+      <a href="/"> 처음으로 </a>
     </>
   );
 }

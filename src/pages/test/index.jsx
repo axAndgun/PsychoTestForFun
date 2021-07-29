@@ -12,6 +12,13 @@ import Timer from '../../components/Timer'
 
 
 
+export const LeftAnswers = styled.div`
+    font-weight: bold;
+    font-size: 20;
+`
+
+
+
 function TestPage() {
 
 const { values, setValues } = useContext(GlobalContext)
@@ -56,7 +63,10 @@ const answername1 = answer1.name
 const answername2 = answer2.name
 const answervalue1 = answer1.value
 const answervalue2 = answer2.value
-//    console.log("+++++++++++++++++++++++++++++++++++++++++"+answername1)
+
+
+
+
 
 function updateResult(answerValues){
     return () => {
@@ -65,6 +75,8 @@ function updateResult(answerValues){
 
         }else{         
             setValues(values+answerValues)
+
+            console.log(values)
 
         }
         setQuestionNumber((prev) => prev + 1)
@@ -76,10 +88,15 @@ function updateResult(answerValues){
 
         <Image src="/dustbin.png" alt="main-image" width="120" height="30" objectFit="cover"/>
         <BinaryQuestionAnswer number={question.id} question={question.name} answername1 ={answername1} answername2={answername2} answervalue1={updateResult(answervalue1)} answervalue2 ={updateResult(answervalue2)} />
-        <Timer onTimeout={()=>router.push(`/test/timeout`)} seconds = {30}/>
+
+        <Timer onTimeout={()=>router.push(`/test/timeout`)} seconds = {60}/>
+        <LeftAnswers>남은 문제: {questions.length - question.id}</LeftAnswers> 
 
         </>
     )
 }
 
 export default TestPage
+
+/*시간초과 되면 */ /*처음으로를 눌렀을 때 결과가 갱신되지 않음 */
+/*질문이 어려움 */

@@ -10,7 +10,6 @@ function useGotoPage(url) {
       },
       [router,url]
   )
-
     return goToPage
 }
 
