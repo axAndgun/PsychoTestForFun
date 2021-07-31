@@ -8,7 +8,7 @@ import {fetcher} from '../../utils/commons'
 import { GlobalContext } from '../_app'
 import Image from 'next/image'
 import Timer from '../../components/Timer'
-
+import { FlexContainerAlignCenter } from '../../styles/FlexContainer';
 
 export const LeftAnswers = styled.div`
     font-weight: bold;
@@ -16,8 +16,9 @@ export const LeftAnswers = styled.div`
 `
 
 const FlexContainerColumnForImg = styled.div`
-
-    flex-flow: column nowrap;
+    display: inline-block;
+    flex-flow: wrap;
+   
  
     
 `
@@ -89,7 +90,9 @@ function updateResult(answerValues){
         <FlexContainerColumnForImg>
         <Image src="/dustbin.png" alt="main-image" width="120" height="30" objectFit="cover"/>
         </FlexContainerColumnForImg>
+
         <BinaryQuestionAnswer number={question.id} question={question.name} answername1 ={answername1} answername2={answername2} answervalue1={updateResult(answervalue1)} answervalue2 ={updateResult(answervalue2)} />
+
         <Timer onTimeout={()=>router.push(`/test/timeout`)} seconds = {60}/>
         <LeftAnswers>남은 문제: {questions.length - question.id}</LeftAnswers> 
         </>
