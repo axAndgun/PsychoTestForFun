@@ -50,7 +50,7 @@ export const test =[
         },
         {
           id : '6',
-          name: '당신의 룸메이트는 분리수거를 하고 있다. 당신은',
+          name: '당신의 룸메이트는 분리수거를 하고 있다. 당신은...',
           answers : [
             {id: '1', name: '못 본척한다.', value: 0},
             {id: '2', name: '도와준다.', value: 10}

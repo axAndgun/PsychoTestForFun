@@ -21,9 +21,9 @@ export const StyledButton = styled.button`
 `
 const FlexContainer = styled.div`
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: wrap; // 줄넘김 처리
     display: inline-block;
-    white-space : nowrap;
+    white-space : wrap; //줄넘김 처리
     
 `
 const FlexContainerColumn = styled.div` 
@@ -38,7 +38,7 @@ function BinaryQuestionAnswer({number, question, answername1, answername2, answe
   return (
 
     <>
-    <FlexContainer>{number}. {question} </FlexContainer>
+    <FlexContainer>{number}. {question}</FlexContainer>
  <FlexContainerColumn>
     <StyledButton onClick ={answervalue1}>  {answername1}</StyledButton>
     <StyledButton onClick ={answervalue2}>  {answername2}</StyledButton>

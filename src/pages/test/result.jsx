@@ -9,12 +9,12 @@ import styled from 'styled-components'
 const LocationText = styled.h3`
     margin: 1rem;
     text-align: center;
-    font-size: 20px;
+   // font-size: 20px;
 `
 
 const ResultTag = styled(LocationText)`
     font-weight: bold;
-    font-size: 40px;
+    font-size: 1.5rem;
 `
 
 

@@ -9,7 +9,7 @@ import { GlobalContext } from '../_app'
 
 import Image from 'next/image'
 import Timer from '../../components/Timer'
-
+import { FlexContainerAlignCenter } from '../../styles/FlexContainer';
 
 
 export const LeftAnswers = styled.div`
@@ -18,8 +18,9 @@ export const LeftAnswers = styled.div`
 `
 
 const FlexContainerColumnForImg = styled.div`
-
-    flex-flow: column nowrap;
+    display: inline-block;
+    flex-flow: wrap;
+   
  
     
 `
@@ -63,8 +64,9 @@ if(!question){
 }
 
 const answers = question.answers
-const answer1 = answers[0]
-const answer2 = answers[1]
+const [answer1, answer2] =answers
+// const answer1 = answers[0]
+// const answer2 = answers[1]
 const answername1 = answer1.name
 const answername2 = answer2.name
 const answervalue1 = answer1.value
@@ -95,7 +97,7 @@ function updateResult(answerValues){
         <FlexContainerColumnForImg>
         <Image src="/dustbin.png" alt="main-image" width="120" height="30" objectFit="cover"/>
         </FlexContainerColumnForImg>
-      
+
         <BinaryQuestionAnswer number={question.id} question={question.name} answername1 ={answername1} answername2={answername2} answervalue1={updateResult(answervalue1)} answervalue2 ={updateResult(answervalue2)} />
 
         <Timer onTimeout={()=>router.push(`/test/timeout`)} seconds = {60}/>
@@ -108,6 +110,4 @@ function updateResult(answerValues){
 export default TestPage
 
 /*시간초과 후 '처음으로' 를 눌렀을 때 결과가 리셋되지 않음 --> link 대신 a tag를 사용하여 해결*/
-
-
 // 버그 : 버튼 안에 글자가 세로로 출력됨. 

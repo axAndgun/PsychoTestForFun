@@ -4,7 +4,7 @@ import styled from 'styled-components'
 export const TimerLayout = styled.div`
     font-weight: bold;
     color: ${props=>props.time>15? 'blue' : 'red'};
-    font-size: 20;
+    //font-size: 20;
 `
 
 function Timer({onTimeout, seconds}) {

@@ -11,11 +11,26 @@ const GlobalStyle = createGlobalStyle`
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2102-01@1.0/KoreanFrenchTypewriter.woff') format('woff');
     }   
 
- 
-  html,body{
+    html,body{
       font-size: 40px;
-
+     
    }
+
+ @media screen and (max-width:1200px) { html,body{
+      font-size: 40px;
+     
+   }}
+
+@media screen and (max-width:768px) {  html,body{
+    font-size: 40px;
+     
+   } }
+@media screen and (max-width:480px) {  html,body{
+      font-size: 20px;
+     
+   } }
+
+ 
 
    body {
         padding-top: 100px;
@@ -85,6 +100,7 @@ function GlobalProvider({children}){
 function PsychoTestForFun({Component, pageProps}){
     return(
         <>
+        <head><meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1, user-scalable=yes,initial-scale=1.0" /></head>
         <GlobalStyle/>
         <GlobalProvider>
             <MaxWidth>
