@@ -6,9 +6,11 @@ import { createContext } from "react";
 import useSwr from 'swr'
 import {fetcher} from '../../utils/commons'
 import { GlobalContext } from '../_app'
+
 import Image from 'next/image'
 import Timer from '../../components/Timer'
 import { FlexContainerAlignCenter } from '../../styles/FlexContainer';
+
 
 export const LeftAnswers = styled.div`
     font-weight: bold;
@@ -22,6 +24,7 @@ const FlexContainerColumnForImg = styled.div`
  
     
 `
+
 
 function TestPage() {
 
@@ -77,9 +80,12 @@ function updateResult(answerValues){
     return () => {
         if(questionNumber>=questions.length-1){
             router.push(`/test/result`)
+
         }else{         
             setValues(values+answerValues)
+
             console.log(values)
+
         }
         setQuestionNumber((prev) => prev + 1)
     }
@@ -87,6 +93,7 @@ function updateResult(answerValues){
 
     return (
         <>
+
         <FlexContainerColumnForImg>
         <Image src="/dustbin.png" alt="main-image" width="120" height="30" objectFit="cover"/>
         </FlexContainerColumnForImg>
@@ -95,6 +102,7 @@ function updateResult(answerValues){
 
         <Timer onTimeout={()=>router.push(`/test/timeout`)} seconds = {60}/>
         <LeftAnswers>남은 문제: {questions.length - question.id}</LeftAnswers> 
+
         </>
     )
 }

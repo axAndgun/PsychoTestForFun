@@ -64,3 +64,4 @@ if (isTestLoading){  // 이 코드를 추가하니 undefined 에러가 해결되
 }
 
 export default TestResult;
+

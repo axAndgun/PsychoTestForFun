@@ -36,6 +36,7 @@ const FlexContainerColumn = styled.div`
 
 function BinaryQuestionAnswer({number, question, answername1, answername2, answervalue1, answervalue2}) {
   return (
+
     <>
     <FlexContainer>{number}. {question}</FlexContainer>
  <FlexContainerColumn>
@@ -43,6 +44,7 @@ function BinaryQuestionAnswer({number, question, answername1, answername2, answe
     <StyledButton onClick ={answervalue2}>  {answername2}</StyledButton>
 </FlexContainerColumn>
 </>
+
    
   );
 }

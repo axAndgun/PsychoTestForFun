@@ -4,23 +4,29 @@ export const test =[
       questions : [
         {
           id: '1',
+
           name: '퇴근 후 홀로 치맥을 했다. 치킨이 남았다.',
           answers : [
             {id: '1', name: '옆집에 사는 잘생긴 오빠를 부른다.', value: 10},
             {id: '2', name: '치킨은 남지 않아요.', value: 5}
+
           ]
         },
         {
           id : '2',
+
           name: ' 다음 중 분리수거 대상은?',
           answers : [
             {id: '1', name: '알코올 쓰레기 영희', value: 5},
             {id: '2', name: '맥주 캔', value: 10}
+
           ]
         },
         {
           id : '3',
+
           name: '다음 중 분리수거 대상이 아닌 것은?',
+
           answers : [
             {id: '1', name: '치킨뼈', value: 20},
             {id: '2', name: '알코올 쓰레기 철수', value: 10}
@@ -58,11 +64,14 @@ export const test =[
             {id: '2', name: '길에 버려진 피자박스', value: 10}
           ]
         },
+
       ],
       results: [
         {
           id: '1',
+
           name: '쓰레기 분별력이 매우 우수합니다.',
+
           condition: (value) =>{
             return value>60
           },
@@ -85,7 +94,9 @@ export const test =[
             return 40>value>0
           },
           imageUrl: '/sad.jpg',
+
           contents: '주변 청소부터 시작하면 도움이 될 겁니다.'
+
         },
       ]
     }
