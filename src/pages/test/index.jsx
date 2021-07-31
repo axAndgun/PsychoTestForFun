@@ -60,8 +60,9 @@ if(!question){
 }
 
 const answers = question.answers
-const answer1 = answers[0]
-const answer2 = answers[1]
+const [answer1, answer2] =answers
+// const answer1 = answers[0]
+// const answer2 = answers[1]
 const answername1 = answer1.name
 const answername2 = answer2.name
 const answervalue1 = answer1.value
@@ -98,6 +99,4 @@ function updateResult(answerValues){
 export default TestPage
 
 /*시간초과 후 '처음으로' 를 눌렀을 때 결과가 리셋되지 않음 --> link 대신 a tag를 사용하여 해결*/
-
-
 // 버그 : 버튼 안에 글자가 세로로 출력됨. 
