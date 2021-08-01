@@ -13,10 +13,6 @@ import {useState} from 'react'
 export const SquareFrame = styled.div`
   position: relative;
 `
-const GridContainer = styled.div`
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-`
 
 const LocationText = styled.h3`
     margin: 1rem;
