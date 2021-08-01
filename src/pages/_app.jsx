@@ -73,15 +73,16 @@ const GlobalStyle = createGlobalStyle`
     }
 `
 
-export const GlobalContext = createContext({
-    values: null,
-    setValues: () => null,
-})
 
 const MaxWidth = styled.main`
     max-width: ${TABLET_MIN_WIDTH};
     margin: 0 auto;
 `
+
+export const GlobalContext = createContext({
+    values: null,
+    setValues: () => null,
+})
 
 function GlobalProvider({children}){
     const [values, setValues] = useState(0)
@@ -108,6 +109,7 @@ function PsychoTestForFun({Component, pageProps}){
             </MaxWidth>
         </GlobalProvider>
     
+
         </>
     )
 }
