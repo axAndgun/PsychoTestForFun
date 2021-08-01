@@ -6,15 +6,15 @@ import { fadeIn } from "../styles/SpecialEffect"
 
 
 const GlobalStyle = createGlobalStyle`
-  /* @font-face {
+   @font-face {
     font-family: 'ng'; 
     //src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/SDSamliphopangche_Outline.woff') format('woff');
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2102-01@1.0/KoreanFrenchTypewriter.woff') format('woff');
     
 
-}    */
+}    
 
-    font-family: 'malgun Gothic';
+    //font-family: 'malgun Gothic';
     html,body{
       font-size: 30px;
      

@@ -8,6 +8,9 @@ import {FlexContainerAlignCenter} from '../../styles/FlexContainer'
 //import { fadeIn } from '../../styles/SpecialEffect'
 //import { test } from '../../models/BinaryQuestionResults'
 
+const Padding = styled.div`
+    padding: 2rem 0;
+`
 
 const FadeIn=styled.div`
 
@@ -95,11 +98,13 @@ if (isTestLoading){  // 이 코드를 추가하니 undefined 에러가 해결되
 
   return (
     <>
+    <Padding>
       <Image src ={result.imageUrl} height ="200" width="200" alt="result-image" objectFit="cover"/> 
       <FlexContainerColumnCenterBold>{result.name}</FlexContainerColumnCenterBold>
       <FlexContainerColumnCenter><FadeIn>{result.contents}</FadeIn></FlexContainerColumnCenter>
       <br></br>
       <a href="/"> 처음으로 </a>
+      </Padding>
     </>
   );
 }
