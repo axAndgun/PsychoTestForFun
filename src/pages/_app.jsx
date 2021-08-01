@@ -1,23 +1,24 @@
 import Homepage from "pages"
 import { createContext, useState, useMemo } from "react"
 import { BASIC_TEXT_COLOR, TABLET_MIN_WIDTH,PRIMARY_TEXT_COLOR } from "../models/constants"
-import styled,{ createGlobalStyle } from 'styled-components'
+import styled,{ createGlobalStyle,keyframes } from 'styled-components'
+import { fadeIn } from "../styles/SpecialEffect"
 
 
 const GlobalStyle = createGlobalStyle`
-  @font-face {
+  /* @font-face {
     font-family: 'ng'; 
     //src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/SDSamliphopangche_Outline.woff') format('woff');
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2102-01@1.0/KoreanFrenchTypewriter.woff') format('woff');
-    }   
+    
 
-    html,body{
-      font-size: 40px;
-     
-   }
+}    */
+
+    font-family: 'malgun Gothic';
+
 
  @media screen and (max-width:1200px) { html,body{
-      font-size: 40px;
+      font-size: 30px;
      
    }}
 
@@ -26,7 +27,7 @@ const GlobalStyle = createGlobalStyle`
      
    } }
 @media screen and (max-width:480px) {  html,body{
-      font-size: 20px;
+      font-size: 15px;
      
    } }
 

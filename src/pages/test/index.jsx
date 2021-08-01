@@ -16,10 +16,10 @@ export const LeftAnswers = styled.div`
 `
 
 const FlexContainerColumnForImg = styled.div`
-    display: inline-block;
-    flex-flow: wrap;
-   
- 
+    //display: inline-block;
+    //display: flex;
+    flex-flow: nowrap;
+  
     
 `
 
@@ -62,8 +62,6 @@ if(!question){
 
 const answers = question.answers
 const [answer1, answer2] =answers
-// const answer1 = answers[0]
-// const answer2 = answers[1]
 const answername1 = answer1.name
 const answername2 = answer2.name
 const answervalue1 = answer1.value
@@ -88,11 +86,9 @@ function updateResult(answerValues){
     return (
         <>
         <FlexContainerColumnForImg>
-        <Image src="/dustbin.png" alt="main-image" width="120" height="30" objectFit="cover"/>
+        <Image src="/dustbin.png" alt="main-image" width="120" height="30" objectFit="cover" />
         </FlexContainerColumnForImg>
-
         <BinaryQuestionAnswer number={question.id} question={question.name} answername1 ={answername1} answername2={answername2} answervalue1={updateResult(answervalue1)} answervalue2 ={updateResult(answervalue2)} />
-
         <Timer onTimeout={()=>router.push(`/test/timeout`)} seconds = {60}/>
         <LeftAnswers>남은 문제: {questions.length - question.id}</LeftAnswers> 
         </>

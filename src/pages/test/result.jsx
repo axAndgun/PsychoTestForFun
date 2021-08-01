@@ -4,19 +4,60 @@ import useSwr from 'swr'
 import {fetcher} from '../../utils/commons'
 import Image from 'next/image'
 import styled from 'styled-components'
+import {FlexContainerAlignCenter} from '../../styles/FlexContainer'
+//import { fadeIn } from '../../styles/SpecialEffect'
 //import { test } from '../../models/BinaryQuestionResults'
 
-const LocationText = styled.h3`
-    margin: 1rem;
-    text-align: center;
-   // font-size: 20px;
+
+const FadeIn=styled.div`
+
+@keyframes fadeIn{
+  0% {
+      opacity:0;
+  }
+  35% {
+      opacity:1;
+  }
+  70% {
+      opacity:0;
+  }
+  100% {
+      opacity:1;
+  }
+}
+
+  animation-name: fadeIn; //이게 있어야 됩니다.
+  animation-duration:2s;
+  animation-duration: leaner;
+  animation-iteration-count:3;
+  animation-direction:alternate;
+  animation-fill-mode: forwards;  
+
 `
 
-const ResultTag = styled(LocationText)`
-    font-weight: bold;
-    font-size: 1.5rem;
-`
+const FlexContainerColumnCenter = styled(FlexContainerAlignCenter)`
+    flex-flow: column nowrap;
+    text-align: center;
+    margin: 1rem 0;
+  `
+  
+const FlexContainerColumnCenterBold = styled(FlexContainerColumnCenter)`
+    font-weight: bold;
+   
+ @media screen and (max-width:1200px) { 
+      font-size: 35px;
+     
+   }
 
+@media screen and (max-width:768px) {  
+    font-size: 45px;
+     
+}
+@media screen and (max-width:480px) {  
+      font-size: 26px;
+     
+ }
+`
 
 function TestResult() {
  const { data: test, error } = useSwr(`/api/test/`, fetcher) //빌드시 undefined 에러 발생!!! 
@@ -55,9 +96,9 @@ if (isTestLoading){  // 이 코드를 추가하니 undefined 에러가 해결되
   return (
     <>
       <Image src ={result.imageUrl} height ="200" width="200" alt="result-image" objectFit="cover"/> 
-      <ResultTag> 점수: {values} </ResultTag>
-      <ResultTag>{result.name}</ResultTag>
-      <LocationText>{result.contents}</LocationText>
+      <FlexContainerColumnCenterBold>{result.name}</FlexContainerColumnCenterBold>
+      <FlexContainerColumnCenter><FadeIn>{result.contents}</FadeIn></FlexContainerColumnCenter>
+      <br></br>
       <a href="/"> 처음으로 </a>
     </>
   );

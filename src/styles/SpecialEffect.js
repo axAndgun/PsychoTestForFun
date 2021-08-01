@@ -1,5 +1,5 @@
 import { keyframes } from 'styled-components'
-
+  
 export const focusInExpandFwd = keyframes`
 0% {
     letter-spacing: -0.5em;
@@ -19,12 +19,12 @@ export const focusInExpandFwd = keyframes`
 `
 
 export const fadeIn = keyframes`
-from {
+0% {
     opacity: 0;
 
 }
 
-to {
+100% {
     opacity: 1;
 
 }
