@@ -96,7 +96,7 @@ function updateResult(answerValues){
         <Image src="/dustbin.png" alt="main-image" width="120" height="30" objectFit="cover" />
         </FlexContainerColumnForImg>
         <BinaryQuestionAnswer number={question.id} question={question.name} answername1 ={answername1} answername2={answername2} answervalue1={updateResult(answervalue1)} answervalue2 ={updateResult(answervalue2)} />
-        <Timer onTimeout={()=>router.push(`/test/timeout`)} seconds = {60}/>
+        <Timer onTimeout={()=>router.push(`/test/timeout`)} seconds = {20}/>
         <LeftAnswers>남은 문제: {questions.length - question.id}</LeftAnswers> 
 
         </>

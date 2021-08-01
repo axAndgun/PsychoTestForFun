@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 export const TimerLayout = styled.div`
     font-weight: bold;
-    color: ${props=>props.time>15? 'blue' : 'red'};
+    color: ${props=>props.time>10? 'black' : 'red'};
     //font-size: 20;
 `
 
