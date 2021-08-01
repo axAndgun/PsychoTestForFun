@@ -15,11 +15,13 @@ const GlobalStyle = createGlobalStyle`
 }    */
 
     font-family: 'malgun Gothic';
-
+    html,body{
+      font-size: 30px;
+     
+   }
 
  @media screen and (max-width:1200px) { html,body{
       font-size: 30px;
-     
    }}
 
 @media screen and (max-width:768px) {  html,body{
