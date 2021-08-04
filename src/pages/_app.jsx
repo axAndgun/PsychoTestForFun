@@ -89,13 +89,13 @@ export const GlobalContext = createContext({
 function GlobalProvider({children}){
     const [values, setValues] = useState(0)
 
-    const Gvalue = useMemo(// 이게 없으면 setValues()를 사용할 수 없음.
+    const Gvalue = useMemo(
         ()=>({
             values,
-            setValues
+            setValues// 이게 없으면 setValues()를 사용할 수 없음.
         }),
-        [values]
-    ) //
+        [values] //useMemo----->[values]가 바뀔 때만 {values, setValues} 참조 변수를 불러오겠다.
+    ) 
 
     return <GlobalContext.Provider value={Gvalue}>{children}</GlobalContext.Provider>
 }

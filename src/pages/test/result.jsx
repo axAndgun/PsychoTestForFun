@@ -98,6 +98,7 @@ if (isTestLoading){  // 이 코드를 추가하니 undefined 에러가 해결되
   result =results[2]
 }
 
+//results.filter(result => (values>=60? result : values>=40? result: result))
 
 
   return (
