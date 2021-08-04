@@ -80,12 +80,14 @@ if (isTestLoading){  // 이 코드를 추가하니 undefined 에러가 해결되
 
 
 
- const { values }  = useContext(GlobalContext)
+ const { values }  = useContext(GlobalContext) //글로벌 변수를 가져옴. 
+
 //const resultIndex = test.results.findIndex((result)=>result.condition(values))
 //const result = test.results[resultIndex] ?? test.results[0]
  
  const results = test.results //빌드시 undefined 에러 발생!!! (해결책 line num: 27 --> isTestLoading)
- 
+
+
  let result =results[0]// let 재할당
 
  if(values>=60){
@@ -95,6 +97,8 @@ if (isTestLoading){  // 이 코드를 추가하니 undefined 에러가 해결되
  }else{
   result =results[2]
 }
+
+
 
   return (
     <>

@@ -7,7 +7,7 @@ export const test =[
 
           name: '퇴근 후 홀로 치맥을 했다. 치킨이 남았다.',
           answers : [
-            {id: '1', name: '옆집에 사는 잘생긴 오빠를 부른다.', value: 10},
+            {id: '1', name: '옆집에 사는 잘생긴 오빠를 부른다.', value: 20},
             {id: '2', name: '치킨은 남지 않아요.', value: 5}
 
           ]

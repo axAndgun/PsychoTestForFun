@@ -34,16 +34,15 @@ const FlexContainerColumn = styled.div`
     
 `
 
-function BinaryQuestionAnswer({number, question, answername1, answername2, answervalue1, answervalue2}) {
+function BinaryQuestionAnswer({number, question, answers, onNextPage}) {
+  
   return (
-
     <>
-    <FlexContainer>{number}. {question}</FlexContainer>
- <FlexContainerColumn>
-    <StyledButton onClick ={answervalue1}>  {answername1}</StyledButton>
-    <StyledButton onClick ={answervalue2}>  {answername2}</StyledButton>
-</FlexContainerColumn>
-</>
+  <FlexContainer>{number}. {question}</FlexContainer>
+  <FlexContainerColumn>
+   {answers.map(answer =>(<StyledButton key={answer.id} onClick={() => {onNextPage(answer.value)}}>{answer.name}</StyledButton>))} 
+  </FlexContainerColumn>
+    </>
 
    
   );
