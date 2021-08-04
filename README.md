@@ -1,5 +1,5 @@
 # 쓰레기 처리 능력 테스트 
-배포 사이트 : [쓰레기 처리 능력 테스트:smiley:](https://trash-filter-test-a7dzrz4rp-badhabits.vercel.app/)
+배포 사이트 : [쓰레기 처리 능력 테스트:smiley:](https://trash-filter-test-828ksj3q0-badhabits.vercel.app/)
 
 ## 실행 방법
 
