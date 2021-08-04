@@ -29,7 +29,7 @@ const FlexContainerColumnForImg = styled.div`
 function TestPage() {
 
 const { values, setValues } = useContext(GlobalContext)
-const [questionNumber, setQuestionNumber] = useState(0)
+const [ questionNumber, setQuestionNumber ] = useState(0)
 const router = useRouter()
 
 const { data: test, error } = useSwr(`/api/test/`, fetcher)
@@ -64,29 +64,18 @@ if(!question){
 }
 
 const answers = question.answers
-const [answer1, answer2] =answers
-const answername1 = answer1.name
-const answername2 = answer2.name
-const answervalue1 = answer1.value
-const answervalue2 = answer2.value
 
+const onNextPage = (answerValues) =>{
+            console.log("온다다온다")
+        setValues(values+answerValues)
 
-
-
-
-function updateResult(answerValues){
-    return () => {
         if(questionNumber>=questions.length-1){
             router.push(`/test/result`)
 
-        }else{         
-            setValues(values+answerValues)
-
+        }     
+            console.log(values+answerValues)
             console.log(values)
-
-        }
         setQuestionNumber((prev) => prev + 1)
-    }
 }
 
     return (
@@ -95,7 +84,7 @@ function updateResult(answerValues){
         <FlexContainerColumnForImg>
         <Image src="/dustbin.png" alt="main-image" width="120" height="30" objectFit="cover" />
         </FlexContainerColumnForImg>
-        <BinaryQuestionAnswer number={question.id} question={question.name} answername1 ={answername1} answername2={answername2} answervalue1={updateResult(answervalue1)} answervalue2 ={updateResult(answervalue2)} />
+        <BinaryQuestionAnswer number={question.id} question={question.name} answers={answers} onNextPage={onNextPage}/>
         <Timer onTimeout={()=>router.push(`/test/timeout`)} seconds = {20}/>
         <LeftAnswers>남은 문제: {questions.length - question.id}</LeftAnswers> 
 

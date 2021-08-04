@@ -7,7 +7,7 @@ function index() {
   return (
     <div>
       시간초과입니다.<br/>
-      <ClientSideLink href="/"> 처음으로 </ClientSideLink>
+      <a href="/"> 처음으로 </a>
     </div>
   );
 }
